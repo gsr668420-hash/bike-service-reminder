@@ -1961,22 +1961,15 @@ const selectBike = async (
             }
           );
 
-          transaction.set(
-            registrationRef,
-            {
-              registrationNumber:
-                cleanRegistration,
-              bikeId:
-                bikeRef.id,
-              ownerId:
-                currentUser.uid,
-              ownerEmail:
-                currentUser.email?.toLowerCase() ||
-                "",
-              createdAt:
-                serverTimestamp(),
-            }
-          );
+         transaction.set(
+  registrationRef,
+  {
+    registrationNumber: cleanRegistration,
+    bikeId: bikeRef.id,
+    ownerId: currentUser.uid,
+    createdAt: serverTimestamp(),
+  }
+);
         }
       );
 
